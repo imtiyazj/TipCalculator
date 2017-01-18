@@ -27,7 +27,7 @@ NSInteger defaultTip;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
     self.title = @"Tip Calculator";
     [self.otherTipPerc setHidden:YES];
     [self.otherTipPercLabel setHidden:YES];
@@ -41,12 +41,10 @@ NSInteger defaultTip;
     [self.tipControl setSelectedSegmentIndex:defaultTip];
     
     
-    
     [self.billTxtField becomeFirstResponder];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"view will appear");
     
     defaultTip = [defaultValues integerForKey:@"default_tip_percentage"];
     [self.tipControl setSelectedSegmentIndex:defaultTip];
@@ -55,19 +53,6 @@ NSInteger defaultTip;
     
     NSLog(@"DEFAULT TIP: %li", (long)defaultTip);
 }
-
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"view did appear");
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    NSLog(@"view will disappear");
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    NSLog(@"view did disappear");
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
